@@ -1,15 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import {Greeting, UserCard} from './Greeting'
+import Producto, {NavBar} from "./Product";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-function Greeting() {
-  const condicional = false;
-  return <h1>{condicional ? "Hello my people :D" : "Negativo pareja"}</h1>;
-}
+
 root.render(
-  <div>
+  <>
+    <NavBar/>
     <Greeting />
     <Greeting />
-  </div>
+    <UserCard/>
+    <Producto/>
+  </>
 );
