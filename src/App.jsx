@@ -1,6 +1,6 @@
-import TaskList from "./TaskList";
-import TaskForm from "./TaskForm";
-import { tasks as data } from "./task";
+import TaskList from "./components/TaskList";
+import TaskForm from "./components/TaskForm";
+import { tasks as data } from "./data/task";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
 		setTasks([
 			...tasks,
 			{
-        id : tasks.length,
+        id : `${tasks.length}`,
 				title,
 				description,
 			},
