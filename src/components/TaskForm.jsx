@@ -21,7 +21,7 @@ const TaskForm = ({ createTask }) => {
 					value={title}
 				/>
 				
-				<textarea 
+				<textarea   
 					placeholder="Description"
 					onChange={(event) => setDescription(event.target.value)}
 					value={description}
