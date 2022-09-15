@@ -1,14 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { TaskContext } from "../context/TaskContext";
 
 const TaskForm = ({ createTask }) => {
 	const [title, setTitle] = useState("");
 	const [description, setDescription] = useState("");
-
+	 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		createTask(title, description);
-		setTitle('')
-		setDescription('') 
+		setTitle("");
+		setDescription("");
 	};
 
 	return (
@@ -20,8 +21,8 @@ const TaskForm = ({ createTask }) => {
 					onChange={(event) => setTitle(event.target.value)}
 					value={title}
 				/>
-				
-				<textarea   
+
+				<textarea
 					placeholder="Description"
 					onChange={(event) => setDescription(event.target.value)}
 					value={description}

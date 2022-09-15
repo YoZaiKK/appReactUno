@@ -2,9 +2,9 @@ import TaskCard from "./TaskCard";
 import {useEffect} from 'react'
 
 function TaskList({ tasks, deleteTask }) {
-	useEffect(() => {
-		console.log(tasks); 
-	}, [tasks]);
+	// useEffect(() => {
+	// 	console.log(tasks); 
+	// }, [tasks]);
 	
 	return tasks.length === 0 ? (
 		<>
@@ -12,9 +12,9 @@ function TaskList({ tasks, deleteTask }) {
 			<p>Holaaaaaa</p>
 		</>
 	) : (
-		<div>
+		<div >
 			{tasks.map((task) => {
-				return <TaskCard task={task} deleteTask={deleteTask}/>
+				return <TaskCard key={task.id} task={task} deleteTask={deleteTask}/>
 			})}
 		</div>
 	);
