@@ -1,20 +1,22 @@
 import TaskCard from "./TaskCard";
-import {useEffect} from 'react'
+import { useContext } from "react";
+import { TaskContext } from "../context/TaskContext";
 
-function TaskList({ tasks, deleteTask }) {
+function TaskList() {
 	// useEffect(() => {
-	// 	console.log(tasks); 
+	// 	console.log(tasks);
 	// }, [tasks]);
-	
+	const { tasks } = useContext(TaskContext);
+
 	return tasks.length === 0 ? (
 		<>
-			<h1> No se han agregado tareas </h1>
-			<p>Holaaaaaa</p>
+			<br />
+			<h1 className="text-3xl text-gray-500 font-extrabold">Agrega una tarea ( ͡° ͜ʖ ͡°)</h1>
 		</>
 	) : (
-		<div >
+		<div className="grid grid-cols-4 gap-2">
 			{tasks.map((task) => {
-				return <TaskCard key={task.id} task={task} deleteTask={deleteTask}/>
+				return <TaskCard key={task.id} task={task} />;
 			})}
 		</div>
 	);
